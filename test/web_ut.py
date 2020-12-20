@@ -31,11 +31,11 @@ class ISelenium(unittest.TestCase):
             print('没有配置环境变量 using_headless, 按照有界面方式运行自动化测试')
 
         chrome_options = Options()
-        if using_headless is not None and using_headless.lower() == 'true':
-            print('使用无界面方式运行')
-            chrome_options.add_argument("--headless")
-            chrome_options.add_argument("–no - sandbox")
-            chrome_options.add_argument("–disable - dev - shm - usage")
+        # if using_headless is not None and using_headless.lower() == 'true':
+        print('使用无界面方式运行')
+        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("–no - sandbox")
+        chrome_options.add_argument("–disable - dev - shm - usage")
 
         self.driver = webdriver.Chrome(executable_path=config.get('driver', 'chrome_driver'),
                                        options=chrome_options)
